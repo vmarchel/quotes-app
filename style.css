@@ -103,7 +103,6 @@ body {
 
 /* ________________________________________sticky headers */
 
-/* Sticky header for Search Results */
 #search-section h2 {
   position: sticky;
   top: 0;
