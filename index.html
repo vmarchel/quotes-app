@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+  <title>Wisdoms</title>
+  <link rel='stylesheet' href='style.css' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'/>
+</head>
+<body>
+  <div class='container'>
+
+    
+    <div class='greeting'>
+      <h1>Wisdoms</h1>
+      <h2 class='tagline'>Carry inspiration everywhere</h2>
+      <p class='subtext'>What is the mood for today?</p>
+    </div>
+
+    
+    <div class='search-bar'>
+      <input id='search-input' type='text' placeholder='Search quotes or authors...' />
+      <i class='fa-solid fa-magnifying-glass search-icon'></i>
+    </div>
+
+    <div class="content-grid">
+
+      <section id="search-section" class='hidden'>
+        <h2>Search Results</h2>
+        <div id='quotes-display' class="quotes-list"></div> 
+      </section>
+
+      
+      <section id="favorites-section" class='favorites-section hidden'>
+        <div class='favorites-header-container'>
+          <h2>My Favorite Quotes</h2>
+          <button id='clear-favorites'>Clear Favorites</button>
+        </div>
+        <div id="favorites-display" class="favorites-list"></div>
+      </section>
+      
+    </div>
+
+    
+    <!-- <section>
+      <div class='bento-grid'>
+
+        <div class='quote-box'>
+          <i class='fa-regular fa-bookmark bookmark-icon'></i>
+          <p class='quote-text'>"Keep going."</p>
+          <span class='quote-author'>— Unknown</span>
+        </div>
+        
+        <div class='quote-box'>
+          <i class='fa-solid fa-xmark remove-favorite'></i>
+          <p class='quote-text'>"Believe in yourself."</p>
+          <span class='quote-author'>— Someone Wise</span>
+        </div>
+
+      </div>
+    </section> -->
+    
+
+  </div>
+  <script src='script.js'></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+/* ________________________________________utilities */
+
+.hidden {
+  display: none !important;
+}
+
+/* ________________________________________global */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f0;
+  color: #3a3a3a;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ________________________________________greeting */
+
+.greeting {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.greeting h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e3a;
+}
+
+.greeting .tagline {
+  color: #6b8e7f;
+  font-size: 1.1rem;
+}
+
+.greeting .subtext {
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  color: #7a7a7a;
+}
+
+/* ________________________________________search bar */
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  gap: 10px;
+}
+
+#search-input {
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid #d4d4ce;
+  background-color: #ffffff;
+  color: #3a3a3a;
+  flex: 1;
+  max-width: 500px;
+  transition: all 0.3s ease;
+}
+
+#search-input::placeholder {
+  color: #7a7a7a;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #6b8e7f;
+  box-shadow: 0 0 0 3px rgba(107, 142, 127, 0.1);
+}
+
+.search-icon {
+  font-size: 1.3rem;
+  cursor: pointer;
+  align-self: center;
+  color: #7a7a7a;
+  transition: color 0.3s;
+}
+
+.search-icon:hover {
+  color: #6b8e7f;
+}
+
+/* ________________________________________two-column layout */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+#search-section,
+#favorites-section {
+  width: 100%;
+}
+
+/* ________________________________________sticky headers */
+
+/* Sticky header for Search Results */
+#search-section h2 {
+  position: sticky;
+  top: 0;
+  background: #f5f5f0;
+  padding: 1rem 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  z-index: 10;
+  border-bottom: 2px solid #e8e8e3;
+  font-size: 1.6rem;
+  color: #2c3e3a;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+
+.favorites-header-container {
+  position: sticky;
+  top: 0;
+  background: #f5f5f0;
+  padding: 1rem 0;
+  z-index: 10;
+  border-bottom: 2px solid #e8e8e3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+  min-height: 60px;
+}
+
+.favorites-header-container h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  color: #2c3e3a;
+}
+
+/* ________________________________________quotes list containers with scroll */
+
+#quotes-display,
+#favorites-display {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 550px;
+  overflow-y: auto;
+  padding-top: 1rem;
+}
+
+/* Custom scrollbar styling */
+#quotes-display::-webkit-scrollbar,
+#favorites-display::-webkit-scrollbar {
+  width: 8px;
+}
+
+#quotes-display::-webkit-scrollbar-track,
+#favorites-display::-webkit-scrollbar-track {
+  background: #e8e8e3;
+  border-radius: 4px;
+}
+
+#quotes-display::-webkit-scrollbar-thumb,
+#favorites-display::-webkit-scrollbar-thumb {
+  background: #6b8e7f;
+  border-radius: 4px;
+}
+
+#quotes-display::-webkit-scrollbar-thumb:hover,
+#favorites-display::-webkit-scrollbar-thumb:hover {
+  background: #5a7a6d;
+}
+
+/* ________________________________________quote box */
+
+.quote-box {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e8e8e3;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.quote-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-color: #6b8e7f;
+}
+
+.quote-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #2c3e3a;
+  padding-right: 2rem;
+}
+
+.quote-author {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #6b8e7f;
+}
+
+/* ________________________________________bookmark icon */
+
+.bookmark-icon {
+  color: #7a7a7a;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.bookmark-icon:hover {
+  color: #6b8e7f;
+  transform: scale(1.1);
+}
+
+.bookmark-icon.saved {
+  color: #6b8e7f;
+}
+
+/* ________________________________________remove favorite (x) */
+
+.remove-favorite {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #c44536;
+  opacity: 0.6;
+  transition: all 0.2s;
+}
+
+.remove-favorite:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ________________________________________clear favorites button */
+
+#clear-favorites {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #d4d4ce;
+  background: #ffffff;
+  color: #7a7a7a;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+#clear-favorites:hover {
+  background: #6b8e7f;
+  color: #ffffff;
+  border-color: #6b8e7f;
+}
+
+/* ________________________________________responsive mobile */
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .greeting h1 {
+    font-size: 2rem;
+  }
+
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+
+  #favorites-section {
+    order: 2;
+  }
+  
+  #search-section {
+    order: 1;
+  }
+
+  .favorites-header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  #quotes-display,
+  #favorites-display {
+    max-height: 400px;
+  }
+}
